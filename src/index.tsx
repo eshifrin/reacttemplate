@@ -22,6 +22,9 @@ const render = () => {
 render();
 
 if (process.env.NODE_ENV === 'development' && module.hot) {
+  const axe = require('react-axe');
+
+  axe(React, ReactDOM, 1000);
   module.hot.accept('./App', render)
 }
 
